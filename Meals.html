@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Ordering Website - الوجبات</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Food Ordering Website</h1>
+      <p class="subtitle">مطعم نكهة الشام</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-links">
+      <a class="nav-link" href="home.html">الرئيسية</a>
+      <a class="nav-link" href="AboutUs.html">من نحن</a>
+      <a class="nav-link active" href="Meals.html">الوجبات</a>
+    </div>
+  </nav>
+
+  <main class="container page-container">
+    <section class="card">
+      <h2>قائمة الوجبات</h2>
+
+      <table class="main-table meals-table">
+        <thead>
+          <tr>
+            <th>الرمز</th>
+            <th>الوجبة</th>
+            <th>السعر (ل.س)</th>
+            <th>إظهار التفاصيل</th>
+            <th>اختيار</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="meal-row" data-code="SF-001" data-name="شاورما دجاج" data-price="35000">
+            <td>SF-001</td>
+            <td>شاورما دجاج</td>
+            <td>35000</td>
+            <td><button type="button" class="btn details-btn" data-target="details-1">تفاصيل</button></td>
+            <td><input type="checkbox" class="meal-select"></td>
+          </tr>
+          <tr id="details-1" class="details-row">
+            <td colspan="5">
+              <img src="https://via.placeholder.com/120x80?text=Shawarma" alt="شاورما دجاج" class="meal-image">
+              <p><strong>المطبخ:</strong> شرقي</p>
+              <p><strong>التصنيف:</strong> وجبة رئيسية</p>
+              <p><strong>المكونات:</strong> خبز شاورما، دجاج متبل، مخلل، ثوم، بطاطا.</p>
+              <p><strong>إضافات:</strong> صوص ثوم حار أو عادي حسب الطلب.</p>
+            </td>
+          </tr>
+
+          <tr class="meal-row" data-code="SF-002" data-name="بيتزا خضار" data-price="42000">
+            <td>SF-002</td>
+            <td>بيتزا خضار</td>
+            <td>42000</td>
+            <td><button type="button" class="btn details-btn" data-target="details-2">تفاصيل</button></td>
+            <td><input type="checkbox" class="meal-select"></td>
+          </tr>
+          <tr id="details-2" class="details-row">
+            <td colspan="5">
+              <img src="https://via.placeholder.com/120x80?text=Pizza" alt="بيتزا خضار" class="meal-image">
+              <p><strong>المطبخ:</strong> إيطالي</p>
+              <p><strong>التصنيف:</strong> وجبة رئيسية</p>
+              <p><strong>المكونات:</strong> عجينة بيتزا، صلصة طماطم، فليفلة، زيتون، ذرة، جبنة.</p>
+              <p><strong>إضافات:</strong> صوص بيتزا خاص بالأعشاب.</p>
+            </td>
+          </tr>
+
+          <tr class="meal-row" data-code="SF-003" data-name="برغر لحم" data-price="48000">
+            <td>SF-003</td>
+            <td>برغر لحم</td>
+            <td>48000</td>
+            <td><button type="button" class="btn details-btn" data-target="details-3">تفاصيل</button></td>
+            <td><input type="checkbox" class="meal-select"></td>
+          </tr>
+          <tr id="details-3" class="details-row">
+            <td colspan="5">
+              <img src="https://via.placeholder.com/120x80?text=Burger" alt="برغر لحم" class="meal-image">
+              <p><strong>المطبخ:</strong> أمريكي</p>
+              <p><strong>التصنيف:</strong> وجبة رئيسية</p>
+              <p><strong>المكونات:</strong> خبز برغر، لحم بقري، خس، بندورة، جبنة شيدر.</p>
+              <p><strong>إضافات:</strong> صوص باربكيو ومايونيز.</p>
+            </td>
+          </tr>
+
+          <tr class="meal-row" data-code="SF-004" data-name="فتوش" data-price="18000">
+            <td>SF-004</td>
+            <td>فتوش</td>
+            <td>18000</td>
+            <td><button type="button" class="btn details-btn" data-target="details-4">تفاصيل</button></td>
+            <td><input type="checkbox" class="meal-select"></td>
+          </tr>
+          <tr id="details-4" class="details-row">
+            <td colspan="5">
+              <img src="https://via.placeholder.com/120x80?text=Fattoush" alt="فتوش" class="meal-image">
+              <p><strong>المطبخ:</strong> شامي</p>
+              <p><strong>التصنيف:</strong> سلطات</p>
+              <p><strong>المكونات:</strong> خس، بندورة، خيار، فجل، سماق، خبز مقلي.</p>
+              <p><strong>إضافات:</strong> دبس رمان وزيت زيتون.</p>
+            </td>
+          </tr>
+
+          <tr class="meal-row" data-code="SF-005" data-name="باستا ألفريدو" data-price="39000">
+            <td>SF-005</td>
+            <td>باستا ألفريدو</td>
+            <td>39000</td>
+            <td><button type="button" class="btn details-btn" data-target="details-5">تفاصيل</button></td>
+            <td><input type="checkbox" class="meal-select"></td>
+          </tr>
+          <tr id="details-5" class="details-row">
+            <td colspan="5">
+              <img src="https://via.placeholder.com/120x80?text=Pasta" alt="باستا ألفريدو" class="meal-image">
+              <p><strong>المطبخ:</strong> إيطالي</p>
+              <p><strong>التصنيف:</strong> وجبة رئيسية</p>
+              <p><strong>المكونات:</strong> باستا، كريمة طبخ، فطر، جبنة بارميزان.</p>
+              <p><strong>إضافات:</strong> صوص ألفريدو كريمي.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p id="selectionError" class="validation-message"></p>
+      <button type="button" id="continueBtn" class="btn primary-btn">متابعة</button>
+    </section>
+
+    <section id="orderSection" class="card hidden">
+      <h2>نموذج الطلب</h2>
+      <form id="orderForm" novalidate>
+        <div class="form-group">
+          <label for="fullName">الاسم الكامل باللغة الإنجليزية (اختياري)</label>
+          <input type="text" id="fullName" class="text-input" placeholder="Ahmad Mohammad">
+          <p class="validation-message" id="nameError"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="bankNumber">رقم الحساب البنكي (إلزامي - 6 أرقام)</label>
+          <input type="text" id="bankNumber" class="text-input" placeholder="055555" maxlength="6">
+          <p class="validation-message" id="bankError"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="orderDate">تاريخ الطلب (اختياري - yyyy-mm-dd)</label>
+          <input type="text" id="orderDate" class="text-input" placeholder="2026-05-10">
+          <p class="validation-message" id="dateError"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="mobileNumber">رقم الموبايل السوري (اختياري)</label>
+          <input type="text" id="mobileNumber" class="text-input" placeholder="09xxxxxxxx أو +9639xxxxxxxx">
+          <p class="validation-message" id="mobileError"></p>
+        </div>
+
+        <button type="submit" class="btn primary-btn">إرسال</button>
+      </form>
+    </section>
+
+    <section id="resultBox" class="card result-box hidden"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 - مشروع طلب الطعام - الجامعة الافتراضية السورية</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="myFunctions.js"></script>
+</body>
+</html>
