@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الوجبات | مطعم الذوق الشرقي</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>مطعم الذوق الشرقي</h1>
+    <p>مشروع مقرر تصميم وتطوير تطبيقات الويب - الجامعة الافتراضية السورية</p>
+  </header>
+
+  <nav class="site-nav" aria-label="التنقل الرئيسي">
+    <a href="home.html">الرئيسية</a>
+    <a href="AboutUs.html">من نحن</a>
+    <a href="Meals.html" class="active">الوجبات</a>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>قائمة الوجبات</h2>
+      <table class="shared-table meals-table">
+        <thead>
+          <tr>
+            <th>الرمز</th>
+            <th>الوجبة</th>
+            <th>السعر (ل.س)</th>
+            <th>إظهار التفاصيل</th>
+            <th>اختيار</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>M01</td>
+            <td>شاورما دجاج</td>
+            <td class="meal-price">35000</td>
+            <td><button class="btn btn-small toggle-details" data-target="#details-M01">إظهار/إخفاء</button></td>
+            <td><input type="checkbox" class="meal-select" data-code="M01" data-name="شاورما دجاج" data-price="35000"></td>
+          </tr>
+          <tr id="details-M01" class="details-row">
+            <td colspan="5">
+              <div class="meal-details-box">
+                <img src="https://via.placeholder.com/220x140?text=Shawarma" alt="شاورما دجاج">
+                <p><strong>المطبخ:</strong> شرقي</p>
+                <p><strong>المكونات:</strong> دجاج متبّل، ثوم، مخلل، خبز عربي.</p>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>M02</td>
+            <td>كبة مشوية</td>
+            <td class="meal-price">42000</td>
+            <td><button class="btn btn-small toggle-details" data-target="#details-M02">إظهار/إخفاء</button></td>
+            <td><input type="checkbox" class="meal-select" data-code="M02" data-name="كبة مشوية" data-price="42000"></td>
+          </tr>
+          <tr id="details-M02" class="details-row">
+            <td colspan="5">
+              <div class="meal-details-box">
+                <img src="https://via.placeholder.com/220x140?text=Kibbeh" alt="كبة مشوية">
+                <p><strong>المطبخ:</strong> سوري</p>
+                <p><strong>المكونات:</strong> برغل ناعم، لحم بقري، بصل، بهارات.</p>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>M03</td>
+            <td>فتوش</td>
+            <td class="meal-price">18000</td>
+            <td><button class="btn btn-small toggle-details" data-target="#details-M03">إظهار/إخفاء</button></td>
+            <td><input type="checkbox" class="meal-select" data-code="M03" data-name="فتوش" data-price="18000"></td>
+          </tr>
+          <tr id="details-M03" class="details-row">
+            <td colspan="5">
+              <div class="meal-details-box">
+                <img src="https://via.placeholder.com/220x140?text=Fattoush" alt="فتوش">
+                <p><strong>التصنيف:</strong> سلطات</p>
+                <p><strong>المكونات:</strong> خس، بندورة، خيار، خبز محمص، دبس رمان.</p>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>M04</td>
+            <td>شيش طاووق</td>
+            <td class="meal-price">50000</td>
+            <td><button class="btn btn-small toggle-details" data-target="#details-M04">إظهار/إخفاء</button></td>
+            <td><input type="checkbox" class="meal-select" data-code="M04" data-name="شيش طاووق" data-price="50000"></td>
+          </tr>
+          <tr id="details-M04" class="details-row">
+            <td colspan="5">
+              <div class="meal-details-box">
+                <img src="https://via.placeholder.com/220x140?text=Shish+Tawook" alt="شيش طاووق">
+                <p><strong>المطبخ:</strong> مشاوي</p>
+                <p><strong>المكونات:</strong> مكعبات دجاج، لبن، ثوم، عصير ليمون، بهارات.</p>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>M05</td>
+            <td>برغر لحم</td>
+            <td class="meal-price">30000</td>
+            <td><button class="btn btn-small toggle-details" data-target="#details-M05">إظهار/إخفاء</button></td>
+            <td><input type="checkbox" class="meal-select" data-code="M05" data-name="برغر لحم" data-price="30000"></td>
+          </tr>
+          <tr id="details-M05" class="details-row">
+            <td colspan="5">
+              <div class="meal-details-box">
+                <img src="https://via.placeholder.com/220x140?text=Burger" alt="برغر لحم">
+                <p><strong>التصنيف:</strong> وجبات سريعة</p>
+                <p><strong>المكونات:</strong> لحم بقري، جبنة، خس، بندورة، خبز برغر.</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button id="continueBtn" class="btn">متابعة</button>
+      <div id="selectionAlert" class="alert-box" aria-live="polite"></div>
+    </section>
+
+    <section id="orderSection" class="card hidden">
+      <h2>نموذج الطلب</h2>
+      <form id="orderForm" novalidate>
+        <div class="form-group">
+          <label for="fullName">الاسم الكامل بالإنجليزية (اختياري)</label>
+          <input type="text" id="fullName" class="text-input" placeholder="First Last">
+          <small class="error-text" id="fullNameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="bankAccount">رقم الحساب البنكي (إلزامي - 6 أرقام)</label>
+          <input type="text" id="bankAccount" class="text-input" maxlength="6" placeholder="000000">
+          <small class="error-text" id="bankAccountError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="orderDate">تاريخ الطلب (اختياري - yyyy-mm-dd)</label>
+          <input type="date" id="orderDate" class="text-input">
+          <small class="error-text" id="orderDateError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="mobileNumber">رقم الموبايل (اختياري - Syriatel أو MTN)</label>
+          <input type="text" id="mobileNumber" class="text-input" placeholder="09XXXXXXXX">
+          <small class="error-text" id="mobileError"></small>
+        </div>
+
+        <button type="submit" class="btn">إرسال</button>
+      </form>
+    </section>
+
+    <section id="resultSection" class="card hidden" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 مطعم الذوق الشرقي - مشروع تعليمي</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="myFunctions.js"></script>
+</body>
+</html>

@@ -1,74 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AboutUs</title>
-    <link rel="icon" href="">
-    <style>
-        body {
-            background: linear-gradient(to bottom, #ffffff, #556B2F);
-            
-        }
-        #a4{
-            margin-top: 1cm;
-            margin-left: 15cm;
-            height: 25%;
-            width: 25%;
-        }
-        #a5{
-
-            margin-top: 2cm;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            padding: 20px;
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-        }
- button {
-  padding: 1.3em 3em;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  color: #000;
-  background-color: #8fab5f;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  margin-top: 1cm;
-  margin-right: 1cm;
-
-  
-}
-
-button:hover {
-  background-color:#556B2F;
-  color: #ffffff;
-  transform: translateY(-7px);
-}
-
-button:active {
-  transform: translateY(-1px);
-}
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن | مطعم الذوق الشرقي</title>
+  <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-   <img id="a4" src="img\pngegg.png" alt="">
-        <p id="a5"> مكتبة السلام<br>
- تأسست في عام 2003، تُعنى بتقديم مجموعة واسعة من الكتب التي تركز بشكل خاص على الشعراء والأدباء. تهدف المكتبة إلى تعزيز الثقافة الأدبية والشعرية من خلال توفير موارد غنية ومتنوعة للباحثين والقراء <br>
-            كما تنظم المكتبة فعاليات أدبية وندوات شعرية تسهم في نشر الوعي الأدبي وتعزيز التواصل الثقافي بين المجتمع الأدبي والجمهوري
-            <br> .نتشرف بزيارتكم لموقعنا وكما يسرنا دعوتكم في كل وقت للاستفادة من مكتبتنا
-          <br>
-            <br> دمشق - الحلبوني - مقابل الجامع
-            <br> 0980398240 : الهاتف
-            <br><button onclick="location.href='home.html';"> home
-            </button><button onclick="location.href='AboutUs.html';"> AboutUs
-            </button><button onclick="location.href='Books.html';"> Books
-            </button>
-            <br><br><br> <br>
+  <header class="site-header">
+    <h1>مطعم الذوق الشرقي</h1>
+    <p>مشروع مقرر تصميم وتطوير تطبيقات الويب - الجامعة الافتراضية السورية</p>
+  </header>
+
+  <nav class="site-nav" aria-label="التنقل الرئيسي">
+    <a href="home.html">الرئيسية</a>
+    <a href="AboutUs.html" class="active">من نحن</a>
+    <a href="Meals.html">الوجبات</a>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>معلومات عامة عن المطعم</h2>
+      <p>
+        مطعم الذوق الشرقي يقدم أشهى الأطباق الشرقية المحضّرة يومياً من مكونات طازجة وجودة عالية.
+        نسعى لتقديم تجربة طعام مميزة تجمع بين النكهة الأصيلة والخدمة الراقية.
+      </p>
+      <p>
+        نوفّر خيارات متنوعة تشمل المشاوي، الوجبات السريعة الشرقية، والسلطات والمقبلات،
+        مع الاهتمام بالنظافة وسرعة تلبية الطلبات.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>معلومات التواصل</h2>
+      <ul>
+        <li><strong>العنوان:</strong> دمشق - المزة - شارع المطاعم</li>
+        <li><strong>الهاتف:</strong> 011-1234567</li>
+        <li><strong>البريد الإلكتروني:</strong> info@sharqitaste.example</li>
+        <li><strong>ساعات العمل:</strong> يومياً من 10:00 صباحاً حتى 12:00 منتصف الليل</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 مطعم الذوق الشرقي - مشروع تعليمي</p>
+  </footer>
 </body>
 </html>
