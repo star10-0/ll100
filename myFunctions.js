@@ -62,7 +62,7 @@ $(function () {
   // التحقق من موبايلات سوريا (سيريتل/MTN) بصيغ 09xxxxxxxx أو 9639xxxxxxxx أو +9639xxxxxxxx
   function isValidSyrianMobile(number) {
     const compact = number.replace(/\s+/g, "");
-    const regex = /^(?:\+963|963|0)(9[3-6]\d{7})$/;
+    const regex = /^(?:\+963|963|0)(9(?:[3-6]|8|9)\d{7})$/;
     return regex.test(compact);
   }
 
