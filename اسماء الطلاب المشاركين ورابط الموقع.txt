@@ -1,34 +1,9 @@
-أسماء الطلاب المشاركين ورابط الموقع
-
-1) الاسم بالعربية: يارا عدنان احمد
-   English Name: Yara Adnan Ahmad
-   الرقم الجامعي: 276189
-   رقم الصف: C?
-
-2) الاسم بالعربية: خولة ابراهيم زرزر
-   English Name: Khawla Ibrahim Zarzar
-   الرقم الجامعي: 257689
-   رقم الصف: C?
-
-3) الاسم بالعربية: نبيل منير الحمادة
-   English Name: Nabil Munir Alhamada
-   الرقم الجامعي: 328316
-   رقم الصف: C?
-
-4) الاسم بالعربية: أمجد عوده
-   English Name: Amjad Odeh
-   الرقم الجامعي: 225310
-   رقم الصف: C?
-
-5) الاسم بالعربية: فاطمه زياد الكردي
-   English Name: Fatima Ziad Alkordi
-   الرقم الجامعي: 257957
-   رقم الصف: C?
-
-6) الاسم بالعربية: فاطمه زياد الكردي
-   English Name: Fatima Ziad Alkordi
-   الرقم الجامعي: 2579997
-   رقم الصف: C?
+أمجد عوده - Amjad Odeh - 225310 - C6
+يارا عدنان احمد - Yara Adnan Ahmad - 276189 - C6
+فاطمه زياد الكردي - Fatima Ziad Alkordi - 257957 - C6
+خولة ابراهيم زرزر - Khawla Ibrahim Zarzar - 257689 - C6
+نبيل منير الحمادة - Nabil Munir Alhamada - 328316 - C6
+أرجوان حيدر شاكر - Arjwan Haidar Shaker - 259180 - C7
 
 رابط الموقع (GitHub Pages):
 https://star10-0.github.io/ll100/

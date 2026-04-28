@@ -1,9 +1,9 @@
-# Food Ordering Website - SVU Assignment
+# Food Ordering Website
 
-## وصف المشروع
-هذا المشروع هو إعادة بناء كاملة لمشروع **SVU S25_Assignment** باستخدام واجهات ويب بسيطة ومباشرة.
+## Project Description
+This project is a student assignment for a Food Ordering Website.
 
-## الملفات المطلوبة
+## Files
 - `home.html`
 - `AboutUs.html`
 - `Meals.html`
@@ -12,19 +12,11 @@
 - `README.md`
 - `اسماء الطلاب المشاركين ورابط الموقع.txt`
 
-## التقنيات المستخدمة
+## Technologies
 - HTML
 - CSS
 - JavaScript
 - jQuery
 
-## طريقة التشغيل
-1. قم بفتح الملف `home.html` في أي متصفح ويب.
-2. استخدم شريط التنقل للانتقال بين الصفحات.
-3. من صفحة الوجبات، اختر الوجبات ثم اضغط `متابعة` لإظهار النموذج.
-
-## رابط النشر
+## GitHub Pages
 https://star10-0.github.io/ll100/
-
-## ملاحظة
-هذا المشروع يستخدم فقط HTML وCSS وJavaScript وjQuery بدون أي إطار عمل أو أدوات بناء.
