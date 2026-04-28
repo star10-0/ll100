@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap" rel="stylesheet">
+    <title>Books</title>
+    <style>
+      
+      body {
+        background: linear-gradient(to bottom, #FFFFFF, #556B2F);
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+        }
+        #a8{
+            margin-top: 1.5cm;
+            margin-right: 3cm;
+        }
+        #a6{
+            margin-top: 1cm;
+            margin-right: 1cm;
+            height: 25%;
+            width: 20%;
+        }
+        #a7{
+            text-align: center;
+            margin-top: -4cm;
+            margin-right:12cm;
+            font-size: 25px;
+            font-family: "Amiri Quran", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        button {
+  padding: 1em 1em;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #000;
+  background-color: #8fab5f;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-top: 2cm;
+  margin-right: 1cm;
+}
+
+button:hover {
+  background-color: #556B2F;
+  color: #ffffff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            font-size: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+        .details {
+            display: none; /* إخفاء النص في البداية */
+        }
+        #d1{
+            height: 4cm;
+
+        }
+        
+        #b1 {
+         padding: 15px 25px;
+         border: unset;
+         border-radius: 15px;
+         color: #212121;
+         z-index: 1;
+         background: #8fab5f;
+         position: relative;
+         font-weight: 1000;
+         font-size: 17px;
+         -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+         box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+         transition: all 250ms;
+         overflow: hidden;
+         margin-top: 10px;
+         margin-right: 2cm;
+        }
+
+        #b1::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         height: 100%;
+         width: 0;
+         border-radius: 15px;
+         background-color:  #556B2F;
+         z-index: -1;
+         -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+         box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+         transition: all 250ms
+        }
+
+        #b1:hover {
+         color: #e8e8e8;
+        }
+
+        #b1:hover::before {
+         width: 100%;
+        }
+        ::selection {
+          background-color: gray;
+        }
+        .container, .container1 {
+            margin: 20px;
+        }
+        .details {
+            display: none;
+        }
+        .form-container {
+            display: none;
+        }
+        .form {
+          width: 400px;
+          height: 600px;
+          background-image: linear-gradient(to bottom, #ffffff, 0);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          border-radius: 0.5rem;
+          margin-right: 500px;
+        }
+
+        .title {
+          color: rgb(255, 255, 255);
+          margin: 3rem 0;
+          font-size: 2rem;
+        }
+
+        .input {
+          margin: 0.5rem 0;
+          padding: 1rem 0.5rem;
+          width: 20rem;
+          background-color: inherit;
+          color: rgb(255, 255, 255);
+          border: none;
+          outline: none;
+          font-size: 1rem;
+          border-bottom: 1px solid rgb(255, 255, 255);
+          transition: all 400ms;
+        }
+        .input::placeholder{
+            color: #ffffff;
+        }
+        .input:hover {
+          background-color: #000000;
+          border: none;
+          border-radius: 0.5rem;
+        }
+        .btn {
+          height: 3rem;
+          width: 20rem;
+          margin-top: 3rem;
+          margin-left: 40px;
+          background-color: rgb(255, 255, 255);
+          border-radius: 0.5rem;
+          border: none;
+          font-size: 1.2rem;
+          transition: all 400ms;
+          cursor: pointer;
+          box-shadow:
+            0 0 10px rgb(255, 255, 255),
+            0 0 10px rgb(255, 255, 255);
+        }
+        .btn:hover {
+        background-color: rgb(255, 255, 255);
+        box-shadow: none;
+        }          
+
+    </style>
+    <script>
+        function toggleText(row) {
+            var checkBox = document.getElementById("toggleCheckBox" + row);
+            var text = document.getElementById("textContent" + row);
+            if (checkBox.checked) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+        }
+
+        function showForm() {
+            var checkBoxes = document.querySelectorAll('input[type="checkbox"][name="bookSelection"]');
+            var formContainer = document.getElementById("formContainer");
+            var isChecked = false;
+
+            checkBoxes.forEach(function(checkBox) {
+                if (checkBox.checked) {
+                    isChecked = true;
+                }
+            });
+
+            if (isChecked) {
+                formContainer.style.display = "block";
+            } else {
+                alert("يرجى اختيار كتاب أولاً.");
+            }
+        }
+        function validateForm() {
+            var fullName = document.getElementById("fullName").value;
+            var nationalID = document.getElementById("nationalID").value;
+            var birthDate = document.getElementById("birthDate").value;
+            var mobile = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+
+            // التحقق من الاسم الكامل
+            var arabicRegex = /^[\u0600-\u06FF\s]+$/;
+            if (fullName && !arabicRegex.test(fullName)) {
+                alert("يرجى إدخال الاسم الكامل بأحرف هجائية عربية فقط.");
+                return false;
+            }
+
+            // التحقق من الرقم الوطني
+            var nationalIDRegex = /^\d{11}$/;
+            if (!nationalIDRegex.test(nationalID)) {
+                alert("يرجى إدخال الرقم الوطني بصيغة صحيحة (11 خانة من الأرقام فقط).");
+                return false;
+            }
+
+            // التحقق من تاريخ الميلاد
+            var birthDateRegex = /^\d{2}-\d{2}-\d{4}$/;
+            if (birthDate && !birthDateRegex.test(birthDate)) {
+                alert("يرجى إدخال تاريخ الميلاد بصيغة صحيحة (dd-mm-yyyy).");
+                return false;
+            }
+
+            // التحقق من رقم الموبايل
+            var mobileRegex = /^(09[34]\d{7})$/;
+            if (mobile && !mobileRegex.test(mobile)) {
+                alert("يرجى إدخال رقم موبايل صحيح يتبع لشركة سيريتل أو MTN.");
+                return false;
+            }
+
+            // التحقق من البريد الإلكتروني
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email && !emailRegex.test(email)) {
+                alert("يرجى إدخال بريد إلكتروني صحيح.");
+                return false;
+            }
+
+            alert("تمت عملية الشراء بنجاح!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <img id="a6" src="img\pngegg.png" alt="">
+
+    <p id="a7"><b>مرحباً</b> بكم في موقعنا يمكنكم مشاهدة وشراء الكثير من القصص  
+    <br> <b> هناك الكثير من القصص التي سوف تعجبك</b>
+    </p>
+    <button onclick="location.href='Books.html';"> Books 
+    </button><button onclick="location.href='AboutUs.html';"> AboutUs
+    </button><button onclick="location.href='home.html';"> home
+    </button>
+    <h1 id="a8" >محتويات المكتبة</h1>
+    
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>رمز الكتاب ISBN</th>
+                    <th>العنوان</th>
+                    <th>السعر</th>
+                    <th>إظهار التفاصيل</th>
+                    <th>الأختيار</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 978-9770916738 </td>
+                    <td>فاتتني صلاة</td>
+                    <td>30000 ل.س</td>
+                    <td>
+                        <input type="checkbox" id="toggleCheckBox1" onclick="toggleText(1)">
+                        <div class="details" id="textContent1">
+                            <div >                          
+                                <p><b>المؤلف:</b>
+                                إسلام جمال
+                                </p> 
+                                <p><b>تصنيف الكتاب:</b>
+                                الكتب الدينية والتنمية الشخصية</p> 
+                                <p><b>ملخص:</b> 
+                                يصنف ضمن فئة الكتب الدينية والتنمية الشخصية. يربط الكاتب إسلام جمال بين علم النفس والدين، ويستعرض كيفية ربط العبادات بالحياة اليومية. يركز الكتاب على فهم الأسباب التي تجعل البعض يحافظ على الصلاة بينما يتركها الآخرون، ويقدم نصائح وأفكار لتحقيق الاستقرار والسكينة من خلال الصلاة </p>
+                                <p><b>أهم الأحداث:</b>
+                                    <p>طرق تحفيز الروح على الصلاة</p></p>
+                                    <img id="d1" src="img\4.jpg" alt="">
+                                    <img id="d1" src="img\5.jpg" alt="">
+                                    <img id="d1" src="img\6.jpg" alt=""> 
+                                <p><b>فاتتني صلاة</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="checkbox" name="bookSelection"></td>
+                </tr>
+                <tr>
+                    <td> 978-9770916739 </td>
+                    <td>الشوك والقرنفل</td>
+                    <td>25000 ل.س</td>
+                    <td>
+                        <input type="checkbox" id="toggleCheckBox2" onclick="toggleText(2)">
+                        <div class="details" id="textContent2">
+                            <div >
+                                <p><b>المؤلف:</b>
+                                الشهيد البطل يحيى السنوار                                    
+                                </p>                          
+                                <p><b>تصنيف الكتاب:</b>
+                                الأدب الفلسطيني
+                                </p> 
+                                <p><b>ملخص:</b>
+                                 رواية “الشوك والقرنفل” للكاتب يحيى السنوار تصنف ضمن الأدب الفلسطيني وتتناول مواضيع النضال والصمود الفلسطيني. هذه الرواية مناسبة للقراء البالغين والشباب الكبار الذين يهتمون بالتاريخ الفلسطيني وتجارب الأسرى والنضال السياسي. الرواية تحتوي على مواضيع معقدة وتاريخية قد تكون أكثر ملاءمة للقراء الذين لديهم اهتمام وفهم أساسي للتاريخ السياسي والاجتماعي في المنطقة</p>
+                                <p><b>أهم الأحداث:</b><p>الطفل أحمد</p></p> 
+                                <img id="d1" src="img\1.webp" alt="">
+                                <img id="d1" src="img\3.jpg" alt="">
+                                <img id="d1" src="img\2.jpg" alt="">
+                                <p><b>الشوك والقرنفل</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td> <input type="checkbox" name="bookSelection">
+                    </td>
+                </tr>
+                <tr>
+                    <td> 978-9770916710 </td>
+                    <td>مدارج السالكين</td>
+                    <td>40000 ل.س</td>
+                    <td>
+                        <input type="checkbox" id="toggleCheckBox3" onclick="toggleText(3)">
+                        <div class="details" id="textContent3">
+                            <div >                          
+                                <p><b>المؤلف:</b>
+                                ابن القيم الجوزية
+                                </p> 
+                                <p><b>تصنيف الكتاب:</b>
+                                التربية اللأخلاقية</p> 
+                                <p><b>ملخص:</b>كتاب “مدارج السالكين” يصنف ضمن كتب التصوف الإسلامي والتربية الروحية. يتناول الكتاب موضوع تزكية النفس وأعمال القلوب، ويشرح المراحل التي يمر بها السالك في طريقه إلى الله. يجمع الكتاب بين الفقه والتصوف، ويقدم رؤية شاملة لكيفية السير إلى الله من خلال العبادات والتفكر في الآيات القرآنية والأحاديث النبوية</p>
+                                <p><b>أهم الأحداث:</b><p> العزم والتوبة والثقة بالله</p></p> 
+                                <img id="d1" src="img\7.jpg" alt="">
+                                <img id="d1" src="img\8.jpg" alt="">
+                                <p><b>مدارج السالكين</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="checkbox" name="bookSelection">
+                       </td>
+                </tr>
+                <tr>
+                    <td> 978-9770916767 </td>
+                    <td>تربية محمد</td>
+                    <td>30000 ل.س</td>
+                    <td>
+                        <input type="checkbox" id="toggleCheckBox4" onclick="toggleText(4)">
+                        <div class="details" id="textContent4">
+                            <div >                          
+                                <p><b>المؤلف:</b>
+                                محمد العلي
+                                </p> 
+                                <p><b>تصنيف الكتاب:</b>
+                                التربية اللأخلاقية</p> 
+                                <p><b>ملخص:</b>يركز على كيفية تربية الأجيال الصالحة من خلال الاقتداء برسول الله محمد صلى الله عليه وسلم. يتناول الكتاب جوانب مختلفة من حياة النبي وكيفية تعامله مع الأطفال والشباب والنساء والشيوخ، ويقدم نصائح وإرشادات تربوية مستمدة من سيرته العطرة</p>
+                                <p><b>أهم الأحداث:</b><p> العزم والتوبة والثقة بالله</p></p> 
+                                <img id="d1" src="img\10.jpg" alt="">
+                                <p><b>تربية محمد </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="checkbox" name="bookSelection">
+                    </td>
+                </tr>
+                <tr>
+                    <td> 978-9770916745</td>
+                    <td>معجزات الذكر</td>
+                    <td>27000 ل.س</td>
+                    <td>
+                        <input type="checkbox" id="toggleCheckBox5" onclick="toggleText(5)">
+                        <div class="details" id="textContent5">
+                            <div >                          
+                                <p><b>المؤلف:</b>
+                                أحمد الحسني
+                                </p> 
+                                <p><b>تصنيف الكتاب:</b>
+                                التنمية الشخصية</p> 
+                                <p><b>ملخص:</b> يستعرض قوة وفوائد الذكر في حياة الإنسان. يتضمن الكتاب قصصًا حقيقية لأشخاص تغيرت حياتهم بفضل المواظبة على الأذكار، ويقدم نصائح عملية لتطبيق الذكر في الحياة اليومية. يهدف الكتاب إلى تعزيز الروحانية والعقلية والجسدية من خلال الذكر</p>
+                                <p><b>أهم الأحداث:</b><p> أوجه الإعجاز في ذكر الله</p></p> 
+                                <img id="d1" src="img\11.jpg" alt="">
+                                <p><b>معجزات الذكر</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td> <input type="checkbox" name="bookSelection">
+                    </td>
+                </tr>
+                <tr>
+                    <td> 978-9770916876 </td>
+                    <td>مع النبي</td>
+                    <td>30000 ل.س</td>
+                    <td>
+                        <input type="checkbox" id="toggleCheckBox6" onclick="toggleText(6)">
+                        <div class="details" id="textContent6">
+                            <div >                          
+                                <p><b>المؤلف:</b>
+                                ابن القيم الجوزية
+                                </p> 
+                                <p><b>تصنيف الكتاب:</b>
+                                التربية اللأخلاقية</p> 
+                                <p><b>ملخص:</b>يستعرض فيه الكاتب مجموعة من الأحاديث والقصص الواردة عن النبي محمد صلى الله عليه وسلم، ويستخلص منها العبر والدروس المستفادة. يتميز الكتاب بأسلوبه الأدبي الرائع الذي يجمع بين المتعة والفائدة، ويهدف إلى تقديم دروس حياتية مستمدة من سيرة النبي لتطبيقها في العصر الحالي</p>
+                                <p><b>أهم الأحداث:</b><p> أهمية النية والتواضع</p></p> 
+                                <img id="d1" src="img\12.jpg" alt="">
+                                <p><b>مع النبي عليه الصلاة والسلام</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="checkbox" name="bookSelection">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button id="b1" onclick="showForm()">متابعة</button>
+    <div class="container1 form-container" id="formContainer">
+        <form class="form" onsubmit="return validateForm()" action="">
+            <p class="title">عملية الشراء</p>
+            <input placeholder="الاسم الكامل:"  id="fullName" class="username input" type="text" />
+            <input placeholder="الرقم الوطني:"  id="nationalID"  name="nationalID" required class="username input" type="text" />
+            <input placeholder="تاريخ الميلاد:"  id="birthDate" class="username input" type="text" />
+            <input placeholder="رقم الموبايل:" id="mobile" class="username input" type="text" />
+            <input placeholder="البريد الإلكتروني:" id="email" class="username input" type="text" />
+            <button class="btn" type="submit">تسجيل الدخول</button>
+        </form>
+    </div>
+</body>
+</html>
